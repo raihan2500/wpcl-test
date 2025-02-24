@@ -3,12 +3,14 @@ import java.util.*;
 
 public class EmployeeManager {
 
+    // Read data from the file
     private static String readFromFile() throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(Constants.FILE_PATH))) {
             return reader.readLine();
         }
     }
 
+    // Write data to the file
     private static void writeToFile(String data) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(Constants.FILE_PATH, true))) {
             writer.write(data);
@@ -48,6 +50,7 @@ public class EmployeeManager {
                     System.out.println(employee);
                 }
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Loaded.");
         } else if (args[0].equals("s")) {
@@ -59,6 +62,7 @@ public class EmployeeManager {
                 int index = new Random().nextInt(employees.length);
                 System.out.println(employees[index]);
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("+")) {
@@ -67,6 +71,7 @@ public class EmployeeManager {
                 String newEmployee = args[0].substring(1);
                 writeToFile(", " + newEmployee);
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("?")) {
@@ -83,6 +88,7 @@ public class EmployeeManager {
                     }
                 }
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("c")) {
@@ -93,6 +99,7 @@ public class EmployeeManager {
                 int wordCount = words.length;
                 System.out.println(wordCount + " word(s) found " + line.length());
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("u")) {
@@ -107,6 +114,7 @@ public class EmployeeManager {
                 }
                 writeToFile(String.join(",", employees));
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Updated.");
         } else if (args[0].contains("d")) {
@@ -118,6 +126,7 @@ public class EmployeeManager {
                 employeeList.remove(employeeToDelete);
                 writeToFile(String.join(",", employeeList));
             } catch (Exception e) {
+                // Handle exception
             }
             System.out.println("Data Deleted.");
         }
