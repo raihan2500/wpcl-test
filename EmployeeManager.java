@@ -21,6 +21,25 @@ public class EmployeeManager {
             return;
         }
 
+        String command = args[0];
+        if (command.equals("l")) {
+            // Load data
+        } else if (command.equals("s")) {
+            // Select random employee
+        } else if (command.startsWith("+")) {
+            // Add new employee
+        } else if (command.startsWith("?")) {
+            // Search for employee
+        } else if (command.equals("c")) {
+            // Count words
+        } else if (command.startsWith("u")) {
+            // Update employee
+        } else if (command.startsWith("d")) {
+            // Delete employee
+        } else {
+            System.out.println("Invalid argument: " + command);
+        }
+
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
             try {
